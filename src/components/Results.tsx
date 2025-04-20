@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ConfusionMatrix, { ConfusionMatrixData } from "./ConfusionMatrix";
 import PerformanceMetrics, { MetricData } from "./PerformanceMetrics";
 import ComparisonChart from "./ComparisonChart";
+import TrafficClassifier from "./TrafficClassifier";
 import { Algorithm } from "./AlgorithmSelection";
 
 interface ResultsProps {
@@ -45,13 +46,14 @@ const Results: React.FC<ResultsProps> = ({ results }) => {
       <h2 className="text-2xl font-bold">Analysis Results</h2>
       
       <Tabs defaultValue="confusion_matrices" className="w-full">
-        <TabsList className="grid grid-cols-3 mb-4">
+        <TabsList className="grid grid-cols-4 mb-4">
           <TabsTrigger value="confusion_matrices">Confusion Matrices</TabsTrigger>
           <TabsTrigger value="metrics">Performance Metrics</TabsTrigger>
           <TabsTrigger value="comparison">Algorithm Comparison</TabsTrigger>
+          <TabsTrigger value="classification">Traffic Classification</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="confusion_matrices" className="space-y-6">
+        <TabsContent value="confusion_matrices">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {results.map((result) => (
               <ConfusionMatrix
@@ -73,6 +75,10 @@ const Results: React.FC<ResultsProps> = ({ results }) => {
         
         <TabsContent value="comparison">
           <ComparisonChart data={metricsData} />
+        </TabsContent>
+
+        <TabsContent value="classification">
+          <TrafficClassifier algorithmResults={results} />
         </TabsContent>
       </Tabs>
     </div>
