@@ -12,6 +12,9 @@ const Hero = () => {
             <Plug className="h-8 w-8 text-primary" />
             <h1 className="text-4xl font-bold text-primary">Kedarinadh Enterprises</h1>
           </div>
+          <p className="text-xl text-muted-foreground mb-4 max-w-2xl">
+            Owned by Baratam Tirupathi Rao
+          </p>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
             Your trusted source for electrical supplies, plumbing solutions, and home appliances in Mandasa
           </p>
