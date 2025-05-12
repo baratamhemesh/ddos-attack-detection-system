@@ -73,17 +73,6 @@ export const analyzeData = async (
             adjustedMetrics.precision += 0.01;
             adjustedMetrics.recall += 0.01;
             break;
-          case "forestTree":
-            // Similar to Random Forest but slightly different
-            adjustedMetrics.accuracy += 0.02;
-            adjustedMetrics.recall += 0.03;
-            break;
-          case "fusionNet":
-            // Often best overall as it's a fusion of models
-            adjustedMetrics.accuracy += 0.05;
-            adjustedMetrics.precision += 0.03;
-            adjustedMetrics.recall += 0.04;
-            break;
         }
         
         // Recalculate F1 based on adjusted precision and recall

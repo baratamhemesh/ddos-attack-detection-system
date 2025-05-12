@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -6,9 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 export type Algorithm = 
   | "passiveAggressive" 
   | "decisionTree" 
-  | "randomForest" 
-  | "forestTree" 
-  | "fusionNet";
+  | "randomForest";
 
 interface AlgorithmSelectionProps {
   selectedAlgorithms: Algorithm[];
@@ -20,8 +17,6 @@ const algorithms = [
   { id: "passiveAggressive", name: "Passive Aggressive" },
   { id: "decisionTree", name: "Decision Tree" },
   { id: "randomForest", name: "Random Forest" },
-  { id: "forestTree", name: "Forest Tree" },
-  { id: "fusionNet", name: "Fusion Net" },
 ];
 
 const AlgorithmSelection: React.FC<AlgorithmSelectionProps> = ({

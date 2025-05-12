@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ConfusionMatrix, { ConfusionMatrixData } from "./ConfusionMatrix";
@@ -23,9 +22,7 @@ interface ResultsProps {
 const algorithmNameMap: Record<Algorithm, string> = {
   passiveAggressive: "Passive Aggressive",
   decisionTree: "Decision Tree",
-  randomForest: "Random Forest",
-  forestTree: "Forest Tree",
-  fusionNet: "Fusion Net"
+  randomForest: "Random Forest"
 };
 
 const Results: React.FC<ResultsProps> = ({ results }) => {
