@@ -5,10 +5,10 @@ import { Separator } from "@/components/ui/separator";
 import FileUpload from "@/components/FileUpload";
 import AlgorithmSelection, { Algorithm } from "@/components/AlgorithmSelection";
 import Results from "@/components/Results";
-import { analyzeData } from "@/services/analyzerService";
 import { useToast } from "@/components/ui/use-toast";
 import NavBar from "@/components/NavBar";
 import { ChartBar } from "lucide-react";
+import { analyzeTrafficData } from "@/services/apiService";
 
 const Index = () => {
   const [csvFile, setCsvFile] = useState<File | null>(null);
@@ -50,7 +50,7 @@ const Index = () => {
     setIsAnalyzing(true);
 
     try {
-      const analysisResults = await analyzeData(csvData, selectedAlgorithms);
+      const analysisResults = await analyzeTrafficData(csvData, selectedAlgorithms);
       setResults(analysisResults);
       toast({
         title: "Analysis complete",

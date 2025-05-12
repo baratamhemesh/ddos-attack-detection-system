@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
@@ -41,9 +40,7 @@ const PerformanceMetrics: React.FC<PerformanceMetricsProps> = ({ data, selectedM
   const algorithmNameMap: Record<Algorithm, string> = {
     passiveAggressive: "Passive Aggressive",
     decisionTree: "Decision Tree",
-    randomForest: "Random Forest",
-    forestTree: "Forest Tree",
-    fusionNet: "Fusion Net"
+    randomForest: "Random Forest"
   };
 
   return (
